@@ -1,15 +1,32 @@
 # Vibrato Tech Test - Candidate Application
 
-
-
-## Overview
-Canditate: Mert Senel<br/>
+## Candidate Details
+Name: Mert Senel<br/>
 Contact: mertsenel@gmail.com<br/>
 
-##Architecture Overview 
+##High level Architectural Overview
 
+1- Front-End  <br/>
+	-Google Cloud managed Kubernetes Cluster <br/>
+	-Auto-scaling Enabled for both Cluster  <br/>
+		- Minimum 2 Nodes(For High Availablity) and can scale up to 4 nodes <br/>
+	-Auto-scaler for pods that runs the VibratoTechTest Application  <br/>
+	
+2- Database <br/>
+	-Cloud SQL managed database server service <br/>
+		- Highly Available as it has been configured with "Regional" Availablity Type  <br/>
 
-
+3-Security<br/>
+	- Both services hosted in Google Cloud and in same region so
+	traffic in between the front-end and the databse never leaves Google's Datacentre Network <br/>
+	- SQL Cloud proxy used for connection configured with a service account <br/>
+	- Service account credentials are stored in GKE Cluster a secret <br/>
+	
+	- Applicaton documentation states that database settings can only be configured via <br/>
+	  conf.toml so I didnt try to pass values as env valus  <br/>
+	  
+	-Application code has SSL setting disabled hardcoded so havent modified that.  <br/>
+	
 ## Requirements
 (I've worked on a Windows 10 Professional x86 for other Operating Systems Requirements might Change)<br/>
 
@@ -148,7 +165,13 @@ This script will enable neccesary apis on your project <br/>
 	
 	
 
-
+## Notes for Assesor
+	-Sometimes Google cloud fails to provision the GKE Kluster due to resource limiations compute quotoas etc. on defined region. <br/> 
+	-If this happens you may try another region or try again some time later. <br/>
+	-I've automated the infrastructure deployment as well but if Google Clouds fabric fails to deliver please <br/>
+	provision the necessary infrastructure manually and update the projectconfig.json accordingly <br/>
+	Skip script#2 ("2-generate-infra.ps1") and just continue with other as usual.  <br/>
+	
 
 
 
