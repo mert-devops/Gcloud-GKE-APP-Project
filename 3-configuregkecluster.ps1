@@ -30,5 +30,3 @@ gcloud iam service-accounts keys create ./key.json `
 #Store the credentials as a kubernetes cluster secret this will be later reffered in .yaml file
 kubectl create secret generic cloudsql-instance-credentials `
     --from-file=credentials.json=./key.json
-
-#Remove-Item -path ./key.json -Force

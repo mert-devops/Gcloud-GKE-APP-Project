@@ -16,8 +16,8 @@ gcloud config set compute/zone $gcezone
 
 
 #genereate cloud sql instance for postgresql availlability regional flag will provide redundancy 
-#gcloud sql instances create $sqlinstancename --cpu=2 --memory=7680MiB `
-#--database-version=POSTGRES_9_6 --availability-type=regional --region=$gcregion
+gcloud sql instances create $sqlinstancename --cpu=2 --memory=7680MiB `
+--database-version=POSTGRES_9_6 --availability-type=regional --region=$gcregion
 
 #set password for postgres user
 gcloud sql users set-password postgres --instance=$sqlinstancename  --password=Password#1
@@ -28,10 +28,11 @@ gcloud sql databases create app --instance=$sqlinstancename
 #writes sql instance connection name to a txt file. This connection name needs to be updated in techtestapp.yaml file
 $sqlinstanceobj=gcloud sql instances describe $sqlinstancename --format json | ConvertFrom-Json
 
+#output connection name so assessor can found conneciton name easily to update .yaml file
 $sqlinstanceobj.connectionName | Out-file SQLINSTANCE-CONNECTION-NAME.txt -Force
 
 
 #generate Google Cloud Kubernetes cluster with Autoscaling enabled
 
-#gcloud container clusters create $gkeclustername --num-nodes 1  --region $gcregion `
- #       --enable-autoscaling --min-nodes 1 --max-nodes 2
+gcloud container clusters create $gkeclustername --num-nodes 1  --region $gcregion `
+        --enable-autoscaling --min-nodes 1 --max-nodes 2

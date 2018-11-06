@@ -22,6 +22,6 @@ $podname=kubectl get pod -l app=techtestapp -o jsonpath="{.items[0].metadata.nam
 kubectl exec $podname -t -i -- /bin/sh -c "./TechTestApp updatedb -s"
 
 #we can now enable pod auto-scaling for our deployment
-#kubectl autoscale deployment techtestapp-deployment --max 10 --min 4 --cpu-percent 50
+kubectl autoscale deployment techtestapp-deployment --max 10 --min 4 --cpu-percent 50
 
 kubectl get services | out-file .\PUBLIC-IP-ADDRESS.txt -Force
