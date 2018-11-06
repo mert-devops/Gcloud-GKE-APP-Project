@@ -3,7 +3,7 @@
 
 
 ## Overview
-Canditate: Mert Senel
+Canditate: Mert Senel<br/>
 Contact: mertsenel@gmail.com
 
 ## Requirements
