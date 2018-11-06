@@ -47,9 +47,9 @@ gcloud components update<br/>
 2- Create a project and Enable Billing on the created Google Cloud Project <br/>
 3- Update projectconfig.json with your prefered settings <br/>
 
-You may just use default values I've checked-in. <br/>
+You may just use default values I've committed. <br/>
 imagenameandversion should be in "techtestapp:v1" format<br/>
-please see default values and adjust accordingly <br/>
+please see default(committed) values and adjust accordingly <br/>
 you may just append them with a number. <br/>
 
 {<br/>
