@@ -30,8 +30,8 @@ Contact: mertsenel@gmail.com<br/>
 ## Requirements
 (I've worked on a Windows 10 Professional x86 for other Operating Systems Requirements might Change)<br/>
 
-1-Google Cloud SDK for Windows<br/>
-2-Docker CE for Windows<br/>
+1-Google Cloud SDK for Windows https://cloud.google.com/sdk/docs/quickstart-windows <br/> 
+2-Docker CE for Windows https://www.docker.com/get-started <br/>
 3-Powershell 5.1 or up<br/>
 
 Once Gcloud cloud shell is install run commands below for installing additional tools and updating current toolkit<br/>
