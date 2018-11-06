@@ -8,7 +8,7 @@ Contact: mertsenel@gmail.com<br/>
 
 ### 1- Front-End  <br/>
 	-Google Cloud managed Kubernetes Cluster <br/>
-	-Auto-scaling Enabled for both Cluster  <br/>
+	-Auto-scaling Enabled for both Cluster and Pods <br/>
 		- Minimum 2 Nodes(For High Availablity) and can scale up to 4 nodes <br/>
 	-Auto-scaler for pods that runs the VibratoTechTest Application  <br/>
 	
