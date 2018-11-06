@@ -6,17 +6,17 @@ Contact: mertsenel@gmail.com<br/>
 
 ## High level Architectural Overview
 
-1- Front-End  <br/>
+### 1- Front-End  <br/>
 	-Google Cloud managed Kubernetes Cluster <br/>
 	-Auto-scaling Enabled for both Cluster  <br/>
 		- Minimum 2 Nodes(For High Availablity) and can scale up to 4 nodes <br/>
 	-Auto-scaler for pods that runs the VibratoTechTest Application  <br/>
 	
-2- Database <br/>
+### 2- Database <br/>
 	-Cloud SQL managed database server service <br/>
 		- Highly Available as it has been configured with "Regional" Availablity Type  <br/>
 
-3-Security<br/>
+### 3-Security<br/>
 	- Both services hosted in Google Cloud and in same region so
 	traffic in between the front-end and the databse never leaves Google's Datacentre Network <br/>
 	- SQL Cloud proxy used for connection configured with a service account <br/>
