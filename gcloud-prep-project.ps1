@@ -19,6 +19,3 @@ gcloud services enable oslogin.googleapis.com --async
 gcloud services enable pubsub.googleapis.com --async
 gcloud services enable sqladmin.googleapis.com --async
 gcloud services enable storage-api.googleapis.com --async
-
-
-gcloud beta billing projects link $projectname --billing-account=$billingaccountid
