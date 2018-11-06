@@ -1,6 +1,9 @@
 {
-"projectname":"vibrato-app-test1"
-
+"projectname":"vib-test5",
+"gcregion":"australia-southeast1",
+"gcezone":"australia-southeast1-a",
+"sqlinstancename":"postgresql2",
+"billingaccountid":"01E99D-2AA967-ED1CEF"
 }
 
 
