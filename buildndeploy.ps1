@@ -20,3 +20,4 @@ docker login -u oauth2accesstoken -p $token https://gcr.io
 
 docker push gcr.io/$projectname/techtestapp:v1
 
+kubectl expose deployment techtestapp-deployment --type=LoadBalancer --port 80 --target-port 80

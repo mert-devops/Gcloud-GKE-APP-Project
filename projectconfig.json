@@ -2,7 +2,9 @@
 "projectname":"vib-test5",
 "gcregion":"australia-southeast1",
 "gcezone":"australia-southeast1-a",
-"sqlinstancename":"postgresql2"
+"sqlinstancename":"postgresql2",
+"sqleditorsa":"gcsa-editor",
+"gkeclustername" : "techtestapp-gkecluster1"
 }
 
 

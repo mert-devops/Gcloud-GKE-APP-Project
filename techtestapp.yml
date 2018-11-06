@@ -1,0 +1,47 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: techtestapp-deployment
+  labels:
+    app: techtestapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: techtestapp
+    spec:
+      containers:
+        - name: techtestapp
+          image: gcr.io/vib-test1/techtestapp:v4
+          ports:
+            - containerPort: 80
+          command: ["/bin/sh","-c"]
+          args: ["'./TechTestApp' 'serve'"]
+          imagePullPolicy: IfNotPresent
+        # Change <INSTANCE_CONNECTION_NAME> here to include your GCP
+        # project, the region of your Cloud SQL instance and the name
+        # of your Cloud SQL instance. The format is
+        # $PROJECT:$REGION:$INSTANCE
+        # [START proxy_container]
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.11
+          command: ["/cloud_sql_proxy",
+                    "-instances=vib-test1:australia-southeast1:postgresql1=tcp:5432",
+                    "-credential_file=/secrets/cloudsql/credentials.json"]
+          # [START cloudsql_security_context]
+          securityContext:
+            runAsUser: 2  # non-root user
+            allowPrivilegeEscalation: false
+          # [END cloudsql_security_context]
+          volumeMounts:
+            - name: cloudsql-instance-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+        # [END proxy_container]
+      # [START volumes]
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials
+      # [END volumes]
