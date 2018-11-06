@@ -6,7 +6,6 @@ $JsonObject = Get-Content  .\projectconfig.json | ConvertFrom-Json
 $projectname = $JsonObject[0].projectname;
 $gcezone = $JsonObject[0].gcezone;
 $sqlinstancename = $JsonObject[0].sqlinstancename;
-$gcregion = $JsonObject[0].gcregion;
 $sqleditorsa = $JsonObject[0].sqleditorsa;
 $gkeclustername = $JsonObject[0].gkeclustername;
 
@@ -14,5 +13,15 @@ $gkeclustername = $JsonObject[0].gkeclustername;
 gcloud config set project $projectname
 gcloud config set compute/zone $gcezone
 
+#in order for kubectl to work we need to grab credentials via gcloud
+gcloud container clusters get-credentials $gkeclustername
 
+#generate private key for the sql editor service account in json format
+gcloud iam service-accounts keys create ./key.json `
+  --iam-account $sqleditorsa@$projectname.iam.gserviceaccount.com
+  
+#Store the credentials as a kubernetes cluster secret this will be later reffered in .yaml file
+kubectl create secret generic cloudsql-instance-credentials `
+    --from-file=credentials.json=./key.json
 
+Remove-Item -path ./key.json -Force
