@@ -4,7 +4,7 @@
 Name: Mert Senel<br/>
 Contact: mertsenel@gmail.com<br/>
 
-##High level Architectural Overview
+## High level Architectural Overview
 
 1- Front-End  <br/>
 	-Google Cloud managed Kubernetes Cluster <br/>
