@@ -58,12 +58,12 @@ cd "C:\YOUR-REPO-CLONE-PATH\Vibrato-TechTestApp-Candidate" <br/>
 	you dont have to select default compute zone as scripts already defines them. <br/>
 	
 7- on the same shell execute script named "1-gcloud-prep-project" via<br/>
-`.\1-gcloud-prep-project`<br/>
+`.\1-gcloud-prep-project` <br/>
 
 This script will enable neccesary apis on your project <br/>
 
 8- Execute second script named "2-generate-infra.ps1"  via <br/>
-		`.\2-generate-infra.ps1`<br/>
+		`.\2-generate-infra.ps1` <br/>
 		
 	This script will provision and sql cloud instance <br/>
 	Create a database called "app" in that instance <br/>

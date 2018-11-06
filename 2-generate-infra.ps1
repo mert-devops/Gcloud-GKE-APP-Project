@@ -34,5 +34,5 @@ $sqlinstanceobj.connectionName | Out-file SQLINSTANCE-CONNECTION-NAME.txt -Force
 
 #generate Google Cloud Kubernetes cluster with Autoscaling enabled
 
-gcloud container clusters create $gkeclustername --num-nodes 1  --region $gcregion `
-        --enable-autoscaling --min-nodes 1 --max-nodes 2
+gcloud container clusters create $gkeclustername --num-nodes 2  --region $gcregion `
+        --enable-autoscaling --min-nodes 2 --max-nodes 4
