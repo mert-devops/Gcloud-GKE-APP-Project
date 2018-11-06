@@ -44,7 +44,7 @@ gcloud components update<br/>
 
 ## Instructions
 1- Install Requirements <br/>
-2- Create a project and Enable Billing on create Gcloud Project <br/>
+2- Create a project and Enable Billing on the created Google Cloud Project <br/>
 3- Update projectconfig.json with your prefered settings <br/>
 
 You may just use default values I've checked-in. <br/>
@@ -64,12 +64,12 @@ you may just append them with a number. <br/>
 
 
 4- Open powershell as administrator <br/>
-5- Set your working directory with commands <br/>
-cd "C:\YOUR-REPO-CLONE-PATH\Vibrato-TechTestApp-Candidate" <br/>
+5- Set your working directory with the command below <br/>
+`cd "C:\YOUR-REPO-CLONE-PATH\Vibrato-TechTestApp-Candidate"` <br/>
 
 ***Scripts are using relative paths so being in correct working directory is important.  <br/>
 
-6-  issue command gcloud init <br/>
+6-  Within the same Powershell shell window issue command `gcloud init` <br/>
 	define your configuration, user account and project <br/>
 	Make sure the project name matches the project name configured on the projectconfig.json<br/>
 	you dont have to select default compute zone as scripts already defines them. <br/>
