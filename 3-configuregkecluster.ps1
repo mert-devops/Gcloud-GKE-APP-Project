@@ -16,6 +16,13 @@ gcloud config set compute/zone $gcezone
 #in order for kubectl to work we need to grab credentials via gcloud
 gcloud container clusters get-credentials $gkeclustername
 
+#generate a service account to be used for SQL Cloud proxy
+gcloud iam service-accounts create $sqleditorsa --display-name $sqleditorsa
+
+#assign cloudsql/editor role for the project
+gcloud projects add-iam-policy-binding $projectname `
+   --member serviceAccount:$sqleditorsa@$projectname.iam.gserviceaccount.com --role roles/cloudsql.editor 
+
 #generate private key for the sql editor service account in json format
 gcloud iam service-accounts keys create ./key.json `
   --iam-account $sqleditorsa@$projectname.iam.gserviceaccount.com
@@ -24,4 +31,4 @@ gcloud iam service-accounts keys create ./key.json `
 kubectl create secret generic cloudsql-instance-credentials `
     --from-file=credentials.json=./key.json
 
-Remove-Item -path ./key.json -Force
+#Remove-Item -path ./key.json -Force

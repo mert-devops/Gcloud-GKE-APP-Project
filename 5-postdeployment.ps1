@@ -6,27 +6,22 @@ $JsonObject = Get-Content  .\projectconfig.json | ConvertFrom-Json
 $projectname = $JsonObject[0].projectname;
 $gcezone = $JsonObject[0].gcezone;
 $gkeclustername = $JsonObject[0].gkeclustername;
-$imagenameandversion = $JsonObject[0].imagenameandversion;
-
 
 #just in case setting projectname and default computezone desired at the beginning of the script 
 gcloud config set project $projectname
 gcloud config set compute/zone $gcezone
 
-Set-Location .\App\
-
-docker build . -t gcr.io/$projectname/$imagenameandversion
-
-Set-Location ..\
-
-$token=gcloud auth print-access-token
-docker login -u oauth2accesstoken -p $token https://gcr.io
-
-docker push gcr.io/$projectname/$imagenameandversion
 
 gcloud container clusters get-credentials $gkeclustername
 
-kubectl create -f techtestapp.yml
+#grab the pod name from techtestapp app to execute seed database command
+kubectl get pods -o json
+$podname=kubectl get pod -l app=techtestapp -o jsonpath="{.items[0].metadata.name}"
 
-kubectl expose deployment techtestapp-deployment --type=LoadBalancer --port 80 --target-port 80
+#execute seed database command
+kubectl exec $podname -t -i -- /bin/sh -c "./TechTestApp updatedb -s"
 
+#we can now enable pod auto-scaling for our deployment
+#kubectl autoscale deployment techtestapp-deployment --max 10 --min 4 --cpu-percent 50
+
+kubectl get services | out-file .\PUBLIC-IP-ADDRESS.txt -Force

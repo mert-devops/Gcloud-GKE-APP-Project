@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: techtestapp
-          image: gcr.io/vib-test1/techtestapp:v4
+          image: gcr.io/vib-test1/techtestapp:v6
           ports:
             - containerPort: 80
           command: ["/bin/sh","-c"]
@@ -27,7 +27,7 @@ spec:
         - name: cloudsql-proxy
           image: gcr.io/cloudsql-docker/gce-proxy:1.11
           command: ["/cloud_sql_proxy",
-                    "-instances=vib-test1:australia-southeast1:postgresql1=tcp:5432",
+                    "-instances=vib-test1:australia-southeast1:postgresql6=tcp:5432",
                     "-credential_file=/secrets/cloudsql/credentials.json"]
           # [START cloudsql_security_context]
           securityContext:
