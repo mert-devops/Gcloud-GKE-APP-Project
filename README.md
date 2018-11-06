@@ -20,7 +20,7 @@ Contact: mertsenel@gmail.com<br/>
 	- Both services hosted in Google Cloud and in same region so
 	traffic in between the front-end and the databse never leaves Google's Datacentre Network <br/>
 	- SQL Cloud proxy used for connection configured with a service account <br/>
-	- Service account credentials are stored in GKE Cluster a secret <br/>
+	- Service account credentials are stored in GKE Cluster as a secret <br/>
 	
 	- Applicaton documentation states that database settings can only be configured via <br/>
 	  conf.toml so I didnt try to pass values as env valus  <br/>
