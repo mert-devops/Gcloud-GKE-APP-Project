@@ -49,7 +49,7 @@ imagenameandversion should be in "techtestapp:v1" format <br/>
 please see default(committed) values and adjust accordingly  <br/>
 you may just append them with a number.  <br/>
 
-{
+{<br/>
 "projectname":"YOURPROJECTNAME",  <br/>
 "gcregion":"australia-southeast1", <br/>
 "gcezone":"australia-southeast1-a", <br/>
@@ -57,7 +57,7 @@ you may just append them with a number.  <br/>
 "sqleditorsa":"YOUR-DESIRED-SERVICE-ACCOUNT-NAME", <br/>
 "gkeclustername" : "YOUR-DESIRED-GKE-CLUSTER-NAME", <br/>
 "imagenameandversion" : "IMAGE-NAME-AND-VERSION-FOR-TAGGING"  <br/>
-}
+}<br/>
 
 
 4- Open powershell as administrator  <br/>
