@@ -98,19 +98,20 @@ This script will enable necessary APIs on your project
 	Download private key credentials for this account  <br/>
 	Create a secret in the Kubernetes Cluster for our deployment's sql proxy to use <br/>
 
-10- Update the techtestapp.yml file with correct values for  <br/>
+10- Update the techtestapp.yml file with correct values for 
 	
-	a- Container image for our app  <br/>
-	The format is gcr.io/<YOUR-PROJECT-ID>/<IMAGENAME:VERSION> <br/>
+	a- Container image for our app  
+	The format is gcr.io/<YOUR-PROJECT-ID>/<IMAGENAME:VERSION> 
 
-	Example: gcr.io/vib-test1/techtestapp:v6 <br/>
+	Example: gcr.io/vib-test1/techtestapp:v6 
 
-	b- Update command for cloudsql-proxy block <br/>
-	the format is "-instances=$PROJECT:$REGION:$INSTANCE=tcp:5432" <br/>
+	b- Update command for cloudsql-proxy block 
+	the format is "-instances=$PROJECT:$REGION:$INSTANCE=tcp:5432" 
 	
-	Example: -instances=vib-test1:australia-southeast1:postgresql6=tcp:5432" <br/>
+	Example: -instances=vib-test1:australia-southeast1:postgresql6=tcp:5432" 
 
-	For your convenience $PROJECT:$REGION:$INSTANCE value can be grabbed directly from "SQLINSTANCE-CONNECTION-NAME.txt" <br/>
+	For your convenience $PROJECT:$REGION:$INSTANCE value can be <br/>
+	grabbed directly from "SQLINSTANCE-CONNECTION-NAME.txt" 
 	
 11- Execute forth script name "4-buildndeploy.ps1" via  <br/>
 	`.\4-buildndeploy.ps1` <br/>
