@@ -1,8 +1,8 @@
 # Vibrato Tech Test - Candidate Application
 
 ## Candidate Details
-Name: Mert Senel
-Contact: mertsenel@gmail.com
+Name: Mert Senel <br/>
+Contact: mertsenel@gmail.com <br/>
 
 ## High level Architectural Overview
 
