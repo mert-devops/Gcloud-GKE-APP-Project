@@ -43,9 +43,9 @@ gcloud components update
 
 
 ## Instructions
-1- Install Requirements 
-2- Create a project and Enable Billing on the created Google Cloud Project 
-3- Update projectconfig.json with your preferred settings 
+1- Install Requirements <br/>
+2- Create a project and Enable Billing on the created Google Cloud Project  <br/>
+3- Update projectconfig.json with your preferred settings  <br/>
 
 You may just use default values I've committed. 
 imagenameandversion should be in "techtestapp:v1" format
@@ -63,8 +63,8 @@ you may just append them with a number.
 }
 
 
-4- Open powershell as administrator 
-5- Set your working directory with the command below 
+4- Open powershell as administrator  <br/>
+5- Set your working directory with the command below <br/>
 `cd "C:\YOUR-REPO-CLONE-PATH\Vibrato-TechTestApp-Candidate"` 
 
 ***Scripts are using relative paths so being in correct working directory is important.***
@@ -80,38 +80,38 @@ you may just append them with a number.
 This script will enable necessary APIs on your project 
 
 8- Execute second script named "2-generate-infra.ps1” via 
-		`.\2-generate-infra.ps1` 
+		`.\2-generate-infra.ps1`
 		
-	This script will provision and sql cloud instance <br/>
-	Create a database called "app" in that instance <br/>
-	Create a Google Cloud Kubernetes Cluster with autoscaling enabled <br/>
+This script will provision and sql cloud instance 
+Create a database called "app" in that instance 
+Create a Google Cloud Kubernetes Cluster with autoscaling enabled 
 	
-	This script will generate a txt file "SQLINSTANCE-CONNECTION-NAME.txt" <br/>
-	In this file you will find the SQL instance connection name which will be later needed <br/>
-	to update techtestapp.yml config  <br/>
+This script will generate a txt file "SQLINSTANCE-CONNECTION-NAME.txt" 
+In this file you will find the SQL instance connection name which will be later needed 
+to update techtestapp.yml config  
 	
-9-  Execute thirds script named "3-configuregkecluster"  via <br/>
+9-  Execute thirds script named "3-configuregkecluster"  via 
 		`.\3-configuregkecluster.ps1`<br/>
 		
-	This script will generate a service account <br/>
-	Assign Cloud SQL Editor role to this service account <br/>
-	Download private key credentials for this account  <br/>
-	Create a secret in the Kubernetes Cluster for our deployment's sql proxy to use <br/>
+This script will generate a service account <br/>
+Assign Cloud SQL Editor role to this service account <br/>
+Download private key credentials for this account  <br/>
+Create a secret in the Kubernetes Cluster for our deployment's sql proxy to use <br/>
 
 10- Update the techtestapp.yml file with correct values for 
 	
-	a- Container image for our app  
-	The format is gcr.io/<YOUR-PROJECT-ID>/<IMAGENAME:VERSION> 
+a- Container image for our app  
+The format is gcr.io/<YOUR-PROJECT-ID>/<IMAGENAME:VERSION> 
 
-	Example: gcr.io/vib-test1/techtestapp:v6 
+Example: gcr.io/vib-test1/techtestapp:v6 
 
-	b- Update command for cloudsql-proxy block 
-	the format is "-instances=$PROJECT:$REGION:$INSTANCE=tcp:5432" 
+b- Update command for cloudsql-proxy block 
+the format is "-instances=$PROJECT:$REGION:$INSTANCE=tcp:5432" 
 	
-	Example: -instances=vib-test1:australia-southeast1:postgresql6=tcp:5432" 
+Example: -instances=vib-test1:australia-southeast1:postgresql6=tcp:5432" 
 
-	For your convenience $PROJECT:$REGION:$INSTANCE value can be <br/>
-	grabbed directly from "SQLINSTANCE-CONNECTION-NAME.txt" 
+For your convenience $PROJECT:$REGION:$INSTANCE value can be <br/>
+grabbed directly from "SQLINSTANCE-CONNECTION-NAME.txt" 
 	
 11- Execute forth script name "4-buildndeploy.ps1" via  <br/>
 	`.\4-buildndeploy.ps1` <br/>
