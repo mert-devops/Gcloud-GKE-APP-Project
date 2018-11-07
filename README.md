@@ -52,35 +52,35 @@ imagenameandversion should be in "techtestapp:v1" format
 please see default(committed) values and adjust accordingly 
 you may just append them with a number. 
 
-{<br/>
-"projectname":"YOURPROJECTNAME", <br/>
+{
+"projectname":"YOURPROJECTNAME",  <br/>
 "gcregion":"australia-southeast1", <br/>
-"gcezone":"australia-southeast1-a",<br/>
-"sqlinstancename":"YOURSQLINSTANCENAME",<br/>
-"sqleditorsa":"YOUR-DESIRED-SERVICE-ACCOUNT-NAME",<br/>
-"gkeclustername" : "YOUR-DESIRED-GKE-CLUSTER-NAME",<br/>
-"imagenameandversion" : "IMAGE-NAME-AND-VERSION-FOR-TAGGING" <br/>
-}<br/>
+"gcezone":"australia-southeast1-a", <br/>
+"sqlinstancename":"YOURSQLINSTANCENAME", <br/>
+"sqleditorsa":"YOUR-DESIRED-SERVICE-ACCOUNT-NAME", <br/>
+"gkeclustername" : "YOUR-DESIRED-GKE-CLUSTER-NAME", <br/>
+"imagenameandversion" : "IMAGE-NAME-AND-VERSION-FOR-TAGGING"  <br/>
+}
 
 
-4- Open powershell as administrator <br/>
-5- Set your working directory with the command below <br/>
-`cd "C:\YOUR-REPO-CLONE-PATH\Vibrato-TechTestApp-Candidate"` <br/>
+4- Open powershell as administrator 
+5- Set your working directory with the command below 
+`cd "C:\YOUR-REPO-CLONE-PATH\Vibrato-TechTestApp-Candidate"` 
 
-***Scripts are using relative paths so being in correct working directory is important.  <br/>
+***Scripts are using relative paths so being in correct working directory is important.***
 
-6-  Within the same Powershell shell window issue command `gcloud init` <br/>
-	define your configuration, user account and project <br/>
-	Make sure the project name matches the project name configured on the projectconfig.json<br/>
-	you dont have to select default compute zone as scripts already defines them. <br/>
+6-  Within the same Powershell shell window issue command `gcloud init` 
+	define your configuration, user account and project
+	Make sure the project name matches the project name configured on the projectconfig.json
+	you dont have to select default compute zone as scripts already defines them. 
 	
-7- on the same shell execute script named "1-gcloud-prep-project" via<br/>
-`.\1-gcloud-prep-project` <br/>
+7- on the same shell execute script named "1-gcloud-prep-project" via
+`.\1-gcloud-prep-project` 
 
-This script will enable necessary APIs on your project <br/>
+This script will enable necessary APIs on your project 
 
-8- Execute second script named "2-generate-infra.ps1” via <br/>
-		`.\2-generate-infra.ps1` <br/>
+8- Execute second script named "2-generate-infra.ps1” via 
+		`.\2-generate-infra.ps1` 
 		
 	This script will provision and sql cloud instance <br/>
 	Create a database called "app" in that instance <br/>
