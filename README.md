@@ -1,56 +1,56 @@
 # Vibrato Tech Test - Candidate Application
 
 ## Candidate Details
-Name: Mert Senel<br/>
-Contact: mertsenel@gmail.com<br/>
+Name: Mert Senel
+Contact: mertsenel@gmail.com
 
 ## High level Architectural Overview
 
 ### 1- Front-End  <br/>
-	-Google Cloud managed Kubernetes Cluster <br/>
-	-Auto-scaling Enabled for both Cluster and Pods <br/>
-		- Minimum 2 Nodes (For High Availability) and can scale up to 4 nodes <br/>
-	-Auto-scaler for pods that runs the VibratoTechTest Application  <br/>
+	-Google Cloud managed Kubernetes Cluster
+	-Auto-scaling Enabled for both Cluster and Pods 
+	- Minimum 2 Nodes (For High Availability) and can scale up to 4 nodes 
+	-Auto-scaler for pods that runs the VibratoTechTest Application
 	
 ### 2- Database <br/>
-	-Cloud SQL managed database server service <br/>
-		- Highly Available as it has been configured with "Regional" Availability Type <br/>
+	-Cloud SQL managed database server service
+	- Highly Available as it has been configured with "Regional" Availability Type
 
 ### 3-Security<br/>
-	- Both services hosted in Google Cloud and in same region so
-	traffic in between the front-end and the database never leaves Google's Datacentre Network <br/>
-	- SQL Cloud proxy used for connection configured with a service account <br/>
-	- Service account credentials are stored in GKE Cluster as a secret <br/>
+	- Both services hosted in Google Cloud and in same region so  
+	traffic in between the front-end and the database never leaves Google's Datacentre Network
+	- SQL Cloud proxy used for connection configured with a service account 
+	- Service account credentials are stored in GKE Cluster as a secret 
 	
-	- Application documentation states that database settings can only be configured via <br/>
-	  conf.toml so I didn’t try to pass values as env valus  <br/>
+	- Application documentation states that database settings can only be configured via 
+	  conf.toml so I didn’t try to pass values as env valus  
 	  
-	-Application code has SSL setting disabled hardcoded so I haven’t modified that.  <br/>
+	- Application code has SSL setting disabled hardcoded so I haven’t modified that. 
 	
 ## Requirements
-(I've worked on a Windows 10 Professional x64 for other Operating Systems Requirements might Change)<br/>
+(I've worked on a Windows 10 Professional x64 for other Operating Systems Requirements might Change)
 
-1-Google Cloud SDK for Windows https://cloud.google.com/sdk/docs/quickstart-windows <br/> 
-2-Docker CE for Windows https://www.docker.com/get-started <br/>
-3-Powershell 5.1 or up<br/>
+1-Google Cloud SDK for Windows https://cloud.google.com/sdk/docs/quickstart-windows 
+2-Docker CE for Windows https://www.docker.com/get-started 
+3-Powershell 5.1 or up
 
-Once Gcloud cloud shell is install run commands below for installing additional tools and updating current toolkit<br/>
+Once Gcloud cloud shell is install run commands below for installing additional tools and updating current toolkit
 
-gcloud init<br/>
-gcloud components install kubectl<br/>
-gcloud components update<br/>
+gcloud init
+gcloud components install kubectl
+gcloud components update
 
 
 
 ## Instructions
-1- Install Requirements <br/>
-2- Create a project and Enable Billing on the created Google Cloud Project <br/>
-3- Update projectconfig.json with your preferred settings <br/>
+1- Install Requirements 
+2- Create a project and Enable Billing on the created Google Cloud Project 
+3- Update projectconfig.json with your preferred settings 
 
-You may just use default values I've committed. <br/>
-imagenameandversion should be in "techtestapp:v1" format<br/>
-please see default(committed) values and adjust accordingly <br/>
-you may just append them with a number. <br/>
+You may just use default values I've committed. 
+imagenameandversion should be in "techtestapp:v1" format
+please see default(committed) values and adjust accordingly 
+you may just append them with a number. 
 
 {<br/>
 "projectname":"YOURPROJECTNAME", <br/>
