@@ -142,6 +142,7 @@ Your might see an output like this:  <br/>
 	techtestapp-deployment   LoadBalancer   10.43.246.3   <pending>     80:30140/TCP   1m 
 	
 keep trying and eventually you should see something similar to:  <br/>
+
 	NAME                     TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE 
 	kubernetes               ClusterIP      10.43.240.1   <none>          443/TCP        1d 
 	techtestapp-deployment   LoadBalancer   10.43.246.3   35.189.38.156   80:30140/TCP   54m 
