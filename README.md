@@ -87,7 +87,7 @@ This script will generate a txt file "SQLINSTANCE-CONNECTION-NAME.txt"  <br/>
 In this file you will find the SQL instance connection name which will be later needed  <br/>
 to update techtestapp.yml config   <br/>
 	
-9-  Execute thirds script named "3-configuregkecluster"  via <br/>
+9-  Execute third script named "3-configuregkecluster"  via <br/>
 `.\3-configuregkecluster.ps1`<br/>
 		
 This script will generate a service account <br/>
@@ -113,8 +113,8 @@ grabbed directly from "SQLINSTANCE-CONNECTION-NAME.txt"
 11- Execute forth script name "4-buildndeploy.ps1" via  <br/>
 `.\4-buildndeploy.ps1` <br/>
 	
-This script will build the app inside docker image  <br/>
-Tag it as you've configured in projectconfig.json <br/>
+This script will build the app inside a docker image  <br/>
+Tag this image as you've configured in projectconfig.json <br/>
 Push the image to your project container registry <br/>
 Create a deployment to your kubernetes cluster via the techtestapp.yml configuration file you have update on last step. <br/>
 Exposes this deployment via creating a service that listens on port 80 and forwards it to our pods port 80 <br/>
