@@ -79,7 +79,7 @@ This script will enable necessary APIs on your project <br/>
 8- Execute second script named "2-generate-infra.ps1” via <br/>
 `.\2-generate-infra.ps1` <br/>
 		
-This script will provision and sql cloud instance <br/>
+This script will provision a sql cloud instance <br/>
 Create a database called "app" in that instance <br/>
 Create a Google Cloud Kubernetes Cluster with autoscaling enabled  <br/>
 	
