@@ -4,7 +4,7 @@
 -Google Cloud managed Kubernetes Cluster <br/>
 -Auto-scaling Enabled for both Cluster and Pods  <br/>
 -Minimum 2 Nodes (For High Availability) and can scale up to 4 nodes <br/>
--Auto-scaler for pods that runs the VibratoTechTest Application <br/>
+-Auto-scaler for pods that runs the Gcloud-GKE-APP-Project Application <br/>
 	
 ### 2- Database <br/>
 -Cloud SQL managed database server service <br/>
@@ -56,7 +56,7 @@ you may just append them with a number.  <br/>
 
 4- Open powershell as administrator  <br/>
 5- Set your working directory with the command below <br/>
-`cd "C:\YOUR-REPO-CLONE-PATH\Vibrato-TechTestApp-Candidate"` 
+`cd "C:\YOUR-REPO-CLONE-PATH\Gcloud-GKE-APP-Project"` 
 
 ***Scripts are using relative paths so being in correct working directory is important.***
 
