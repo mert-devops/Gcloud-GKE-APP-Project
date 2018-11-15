@@ -94,12 +94,12 @@ Create a secret in the Kubernetes Cluster for our deployment's sql proxy to use 
 a- Container image for our app   <br/>
 The format is gcr.io/<YOUR-PROJECT-ID>/<IMAGENAME:VERSION>  <br/>
 
-Example: gcr.io/vib-test1/techtestapp:v6 <br/>
+Example: gcr.io/test1/techtestapp:v6 <br/>
 
 b- Update command for cloudsql-proxy block <br/>
 the format is "-instances=$PROJECT:$REGION:$INSTANCE=tcp:5432" <br/>
 	
-Example: -instances=vib-test1:australia-southeast1:postgresql6=tcp:5432" <br/>
+Example: -instances=test1:australia-southeast1:postgresql6=tcp:5432" <br/>
 
 For your convenience $PROJECT:$REGION:$INSTANCE value can be <br/>
 grabbed directly from "SQLINSTANCE-CONNECTION-NAME.txt" 
