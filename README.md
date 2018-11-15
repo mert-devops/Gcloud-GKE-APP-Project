@@ -1,9 +1,3 @@
-# Vibrato Tech Test - Candidate Application
-
-## Candidate Details
-Name: Mert Senel <br/>
-Contact: mertsenel@gmail.com <br/>
-
 ## High level Architectural Overview
 
 ### 1- Front-End  <br/>
@@ -160,16 +154,6 @@ The output should be like this:  <br/>
 	techtestapp-deployment-7d7f76c55c-dhmzv   2/2       Running   0          49m 
 	techtestapp-deployment-7d7f76c55c-dndfq   2/2       Running   0          49m 
 	techtestapp-deployment-7d7f76c55c-wpjm2   2/2       Running   0          54m 
-	
-	
-	
-
-## Notes for Assessor
--Sometimes Google cloud fails to provision the GKE Kluster due to resource limitations compute quotas etc. on defined region. <br/> 
--If this happens you may try another region or try again some time later. <br/>
--I've automated the infrastructure deployment as well but if Google Clouds fabric fails to deliver please <br/>
-provision the necessary infrastructure manually and update the projectconfig.json accordingly <br/>
-Skip script#2 ("2-generate-infra.ps1") and just continue with other as usual.  <br/>
 	
 
 
